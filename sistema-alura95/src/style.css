@@ -1,0 +1,704 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-image: url(https://www.teahub.io/photos/full/99-993855_windows-95-start-me-up-windows-95.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.task-bar{
+  width: 100%;
+  height: 32px;
+  background-color: #C0C0C0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px outset;
+}
+
+#iniciar{
+  margin-left: 3px;
+  height: 30px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px outset;
+  transition: .2s;
+}
+
+.btnPressed{
+  background-color: #808080;
+  border: 1px inset;
+}
+
+.relogio{
+  margin-right: 5px;
+  border: 1px inset;
+}
+
+.logo{
+  width: 50px;
+  height: 100%;
+  background-color: #808080;
+  position: absolute;
+  left: 3px;
+}
+
+.logo h2{
+  transform: rotate(-90deg);
+  position: absolute;
+  bottom: 80px;
+  left: -60px;
+  color: #C0C0C0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.menu{
+  display: none;
+  flex-direction: column-reverse;
+  width: 350px;
+  padding-left: 50px;
+  position: absolute;
+  bottom: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px outset;
+}
+
+.menu p{
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+}
+
+.menu a{
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  background-color: #C0C0C0;
+  padding: 20px;
+  width: 295px;
+  display: flex;
+}
+
+.programas{
+  position: absolute;
+  top: -481px;
+  left: 350px;
+  border: 2px outset;
+  display: none;
+  flex-direction: column-reverse;
+}
+
+.programas a{
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  background-color: #C0C0C0;
+  padding: 20px;
+  width: 295px;
+}
+
+.jogos{
+  position: absolute;
+  top: -422px;
+  left: 350px;
+  border: 2px outset;
+  display: none;
+  flex-direction: column-reverse;
+}
+
+.jogos a{
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  background-color: #C0C0C0;
+  padding: 20px;
+  width: 295px;
+}
+
+.menu a:hover, .programas a:hover, .jogos a:hover{
+  background-color: #000080;
+  color: #fff;
+}
+
+a i{
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.menu a:nth-child(2){
+  border-top: 2px outset;
+}
+
+.show{
+  display: flex;
+}
+
+/*== SOBRE ================*/
+
+.modal-sobre{
+  width: 70%;
+  height: 80%;
+  padding-bottom: 30px;
+  background-color: #C0C0C0;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#info{
+  margin: 10px 0 0 15px;
+  padding: 3px;
+  border: outset 1px;
+  display: inline-block;
+}
+
+.container-sobre{
+  width: 95%;
+  height: 80%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px inset;
+  margin: 10px auto;
+  overflow: auto;
+}
+
+/*== CONVERSOR================*/
+
+.modal-conversor{
+  width: 200px;
+  height: 200px;
+  background-color: #C0C0C0;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.title-bar{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 23px;
+  background-color: #000080;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.window-title{
+  color: #fff;
+  margin-left: 3px;
+}
+
+.close{
+  background-color: #a0a0a0;
+  width: 15px;
+  height: 15px;
+  border: 1px outset;
+  margin-right: 3px;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-conversor{
+  width: 100%;
+  height: 70%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-conversor input{
+  height: 30px;
+  padding-left: 5px;
+  border: 1px inset;
+  margin: 7px 0 14px;
+}
+
+#btnConverter{
+  margin-bottom: 15px;
+  padding: 5px 10px;
+}
+
+/*== CALCULADORA ================*/
+
+.modal-calc{
+  width: 250px;
+  padding-bottom: 30px;
+  background-color: #C0C0C0;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.container-calc{
+  width: 100%;
+  height: 70%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-calc input{
+  display: block;
+  height: 30px;
+  padding-left: 5px;
+  border: 1px inset;
+  margin: 7px 0 14px;
+}
+
+.container-calc button{
+  padding: 5px 15px;
+  margin-bottom: 5px;
+}
+
+.operacoes{
+  display: flex;
+  margin: 7px;
+}
+
+.operacoes i{
+  margin: 5px;
+  padding: 5px 7px;
+  border: 1px outset;
+  background-color: #C0C0C0;
+}
+
+/*== POKÉMON ====================*/
+
+.modal-pokemon{
+  width: 350px;
+  padding-bottom: 30px;
+  background-color: #C0C0C0;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.modal-pokemon h2{
+  text-align: center;
+  margin: 10px 0;
+}
+
+.imgPokemon{
+  width: 340px;
+  height: 340px;
+  background-color: #cecece;
+  border: 1px inset;
+  margin: 5px auto;
+}
+
+.escolha-pokemon{
+  display: flex;
+  justify-content: center;
+}
+
+.container-pokemon button{
+  padding: 5px 15px;
+  margin: 5px;
+}
+
+/*== MENTALISTA ====================*/
+
+.modal-mentalista{
+  width: 350px;
+  padding-bottom: 30px;
+  background-color: #C0C0C0;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.container-mentalista{
+  width: 95%;
+  margin: 0 auto;
+}
+
+.texto-balao{
+  width: 100%;
+  height: 100px;
+  border-radius: 50px;
+  background-color: #fff; 
+  margin: 10px auto 0;
+  padding: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.arrow{
+  width: 18px;
+  height: 18px;
+  transform: rotate(45deg);
+  background-color: #fff;
+  position: absolute;
+  bottom: -9px;
+  left: 150px;
+}
+
+.resposta-inicio{
+  margin-top: 10px;
+}
+
+.resposta-inicio button{
+  margin-right: 5px;
+  padding: 1px 7px;
+}
+
+.akinator-inicio img{
+  display: flex;
+  margin: 15px auto 0;
+}
+
+.info{
+  display: block;
+}
+
+.info p{
+  margin-bottom: 7px;
+}
+
+.akinator-play{
+  display: none;
+  margin: 15px 0 0;
+}
+
+.user-palpite input{
+  width: 50px;
+  padding: 3px;
+  margin-top: 5px;
+}
+
+.user-palpite button{
+  padding: 3px;
+}
+
+.reinicio{
+  display: none;
+}
+
+.reinicio button{
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/*== APPEL TV ===============*/
+
+.modal-appelTV{
+  width: 50%;
+  height: 80%;
+  padding-bottom: 30px;
+  background-color: #C0C0C0;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.container-appelTV{
+  padding: 15px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.logo-tv{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+}
+
+#imagem-filme{
+  display: block;
+  margin: auto;
+  padding: 5px;
+  border: 1px inset;
+}
+
+.container-appelTV p{
+  margin: 7px;
+}
+
+.container-appelTV button{
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#lista-filmes{
+  width: 100%;
+  max-height: 240px;
+  align-items: center;
+  padding: 30px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+
+#lista-filmes img{
+  max-height: 200px;
+  margin: 5px;
+}
+
+/*== TABELA DE PONTOS ===============*/
+
+.modal-tabelaPontos{
+  min-width: 50%;
+  min-height: 50%;
+  padding-bottom: 30px;
+  background-color: #C0C0C0;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.container-tabelaPontos{
+  text-align: center;
+  padding: 0 10px;
+}
+
+.tabela-pontos,
+.tabela-pontos td,
+.tabela-pontos th{
+  border: 1px solid;
+}
+
+.tabela-pontos button{
+  padding: 3px 7px;
+  margin: 2px;
+}
+
+.tabela-pontos td:nth-child(6) button{
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+}
+
+.tabela-pontos td:nth-child(8) button{
+  background-color: red;
+  color: #fff;
+  font-weight: bold;
+}
+
+.menu-tabelaPontos{
+  padding: 5px;
+}
+
+.menu-tabelaPontos input{
+  margin: 3px;
+  padding: 3px;
+}
+
+.menu-tabelaPontos button{
+  padding: 3px;
+}
+
+/*== SUPER TRUNFO ===============*/
+
+.modal-superTrunfo{
+  padding-bottom: 30px;
+  background-color: #C0C0C0;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.modal-superTrunfo button{
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.container-superTrunfo{
+  text-align: center;
+  padding: 0 10px;
+}
+
+.cartas{
+  display: flex;
+  justify-content: center;
+}
+
+#carta-jogador, #carta-maquina{
+  height: 350px;
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .5);
+}
+
+.nome-carta{
+  background-color: #E4DF4D;
+  height: 10%;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.imagem-carta{
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.opcoes-atributos{
+  background-color: #E4DF4D;
+  width: 100%;
+  height: 40%;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: left;
+  line-height: 1.2rem;
+}
+
+.carta-jogador img, .carta-maquina img{
+  height: inherit;
+  width: inherit;
+}
+
+.cartas input{
+  margin-right: 10px;
+}
+
+.resultadoSuperTrunfo{
+  background-color: #808080;
+  height: 50px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.placar{
+  height: 30px;
+  width: 100%;
+  background-color: #808080;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+#pontosJogador, #pontosMaquina{
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.reset{
+  display: none;
+}
+
+/*== CERTIFICADO ===============*/
+
+.modal-certificado{
+  font-family: sans-serif;
+  background-color: #C0C0C0;
+  width: 500px;
+  outline: outset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.container-certificado{
+  padding: 25px 25px 0 25px;
+
+}
+
+.modal-certificado ul{
+  list-style: none;
+}
+
+.modal-certificado ul li{
+  margin-bottom: 5px;
+}
+
+.insignias{
+  background-color: #cecece;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 1px inset;
+}
+
+.top-certificado{
+  display: flex;
+  align-items: center;
+}
+
+.avatar{
+  border: 1px inset;
+  margin-right: 16px;
+}
+
+.avatar img{
+  height: 100px;
+}
+
+.links-certificado i{
+  font-size: 1.5rem;
+  margin: 16px;
+}
+
+.links-certificado{
+  text-align: center;
+}
+
+.links-certificado a{
+  color: #333;
+}
+
+@media (max-width: 600px){
+  .modal-certificado{
+    width: 90%;
+  }
+}
